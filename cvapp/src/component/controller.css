@@ -1,0 +1,54 @@
+.Main {
+     display: flex;
+     flex-direction: column; /* Aligns content in a column */
+     align-items: center; /* Centers horizontally */
+     width: 100vh;
+     justify-content: flex-start; /* Moves content to the top */
+     height: 100vh; /* Full height of the viewport */
+     padding-top: 20px; /* Adjust this value to move it further down */
+     /* background-color: #f5f5f5; Optional background */
+}
+
+p{
+     margin: 0;
+     font-size: 20px;
+}
+
+.heading{
+     font-size: 30px;
+     /* border: 2px solid red; */
+     font-weight: bold;
+     margin-bottom: 10px;
+}
+
+.buttons{
+     display: flex;
+     flex-direction: column;
+     padding: 10px;
+}
+
+button{
+     height: 50px;
+     width: 300px;
+     margin: 5px;
+     /* background-color: white; */
+     color: white;
+     font-size: 20px;
+}
+
+.inputField{
+     /* width: 200px; */
+     display:  flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 10px;
+}
+
+
+.inputField input{
+     width: 100px;
+     height: 25px;
+     /* margin: 2; */
+     border-radius: 2px;
+     font-size: 15px;
+}
