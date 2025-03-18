@@ -6,7 +6,9 @@ import Personal from "./personal.jsx"
 import Project from "./project.jsx"
 import Skill from "./Skill.jsx"
 import PersonalPage from "./personalPage.jsx"
+import EducationPage from "./EducationPage.jsx"
 import CustomDatePicker from "./date.jsx"
+import ExperiencePage from "./ExperiencePage.jsx"
 // import Filler from "./filler.jsx"
 
 
@@ -34,8 +36,8 @@ export default function Controller(){
 
 
       const [EducationalInfo, setEducationalInfo] = useState({
-        Collage :"Example University",
-        Degree : " Master of Engineering , collage",
+        College :"Example University",
+        Degree : " Master of Engineering , college",
         CGPA : 9.1,
         To : new Date(),
         From: new Date()
@@ -94,9 +96,12 @@ return(
         <div className="buttons">
             <button className="personal" onClick={()=>handleClick(0)}>Personal</button>
             {activeState===0&&<Personal personalInfo={personalInfo} handleValueChange={personalChange}/>}
+            {/* {activeState===0&&<Personal personalInfo={personalInfo} handleValueChange={personalChange}/>} */}
 
             <button className="Education" onClick={()=>handleClick(1)}>Education</button>
             {activeState===1&&<Education EducationalInfo={EducationalInfo} handleValueChange={EducationChnage}/>}
+            {/* {activeState===1&&<Education EducationalInfo={EducationalInfo} handleValueChange={EducationChnage}/>} */}
+
 
             <button className="Experience" onClick={()=>handleClick(2)}>Experience</button>
             {activeState===2&&<Experience ExperienceInfo={ExperienceInfo} handleValueChange={ExperienceChange}/>}
@@ -113,9 +118,12 @@ return(
         <PersonalPage personalInfo={personalInfo}/>
         <p className="heading">Education</p>
         <hr  />
-      
-
-
+        <EducationPage EducationInfo={EducationalInfo}/>
+        <p className="heading">Experience</p>
+        <hr  />
+        <ExperiencePage ExperienceInfo={ExperienceInfo}/> 
+        <p className="heading">Projects</p>
+        <hr  />
     </div>
     
    

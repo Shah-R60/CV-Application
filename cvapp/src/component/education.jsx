@@ -6,7 +6,7 @@ import "./child.css";
 export default function Education({EducationalInfo,handleValueChange}) {
   return (
     <>
-      <Filler title="Collage" value={EducationalInfo.Collage} handleValue={handleValueChange} />
+      <Filler title="College" value={EducationalInfo.College} handleValue={handleValueChange} />
       <Filler title="Degree" value={EducationalInfo.Degree} handleValue={handleValueChange} />
       <Filler title="CGPA" value={EducationalInfo.CGPA} handleValue={handleValueChange} />
       

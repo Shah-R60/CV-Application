@@ -76,3 +76,32 @@
    }
    
 
+
+   .SubClass{
+    display: flex;
+    flex-direction: column;
+   }
+
+   .MainClass{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+   }
+
+   .ExpMainClass{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+   }
+
+   .ExpSubClass{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+   }
+
+   .ExpMainClass p{
+    margin-bottom: 10px;
+   }
+
