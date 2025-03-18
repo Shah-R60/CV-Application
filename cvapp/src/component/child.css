@@ -1,0 +1,78 @@
+.main{
+     display: flex;
+     flex-direction: column;
+     /* border: 2px solid red; */
+     width: 100%;
+     align-items: center;
+     padding: 20px;
+}
+
+.main .name{
+     font-size: 30px;
+     font-weight: bold;
+}
+
+.main .detail{
+     /* border: 2px solid red; */
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 10px;
+}
+
+ p{
+     font-size: 15px;
+}
+
+
+
+.date-picker-container {
+     position: relative;
+     display: inline-block;
+   }
+   
+   .custom-input {
+     width: 150px;
+     padding: 8px;
+     border: 1px solid #666;
+     border-radius: 5px;
+     background: black;
+     color: white;
+     text-align: center;
+   }
+   
+   .custom-calendar {
+     background: #1e1e1e;
+     color: white;
+     border-radius: 10px;
+     padding: 10px;
+     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+   }
+   
+   .custom-calendar .react-datepicker__day--selected {
+     background-color: #00aaff !important;
+     color: white;
+     border-radius: 5px;
+   }
+   
+   .calendar-icon {
+     position: absolute;
+     right: 10px;
+     top: 50%;
+     transform: translateY(-50%);
+     color: white;
+     cursor: pointer;
+   }
+
+   .date{
+     display: flex;
+     align-items: center;
+     width: 90%;
+     /* border: 2px solid red; */
+     margin-left: 20px;
+     margin-right: 20px;
+     justify-content: space-between;
+   }
+   
+

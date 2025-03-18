@@ -1,0 +1,26 @@
+import Filler from "./filler.jsx";
+import CustomDatePicker from "./date.jsx";
+import "./child.css";
+
+
+export default function Education({EducationalInfo,handleValueChange}) {
+  return (
+    <>
+      <Filler title="Collage" value={EducationalInfo.Collage} handleValue={handleValueChange} />
+      <Filler title="Degree" value={EducationalInfo.Degree} handleValue={handleValueChange} />
+      <Filler title="CGPA" value={EducationalInfo.CGPA} handleValue={handleValueChange} />
+      
+      <div className="date">
+        <p>From</p>
+        <CustomDatePicker startDate={EducationalInfo.From} Title="From" onDateChange={handleValueChange}/>
+      </div>
+      <div className="date">
+        <p>To</p>
+        <CustomDatePicker startDate={EducationalInfo.To} Title="To" onDateChange={handleValueChange}/>
+      </div>
+      
+
+
+    </>
+  );
+}
