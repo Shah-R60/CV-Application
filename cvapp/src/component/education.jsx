@@ -3,7 +3,7 @@ import CustomDatePicker from "./date.jsx";
 import "./child.css";
 
 
-export default function Education({EducationalInfo,handleValueChange}) {
+export default function Education({index, EducationalInfo,handleValueChange, removeEducation}) {
   return (
     <>
       <Filler title="College" value={EducationalInfo.College} handleValue={handleValueChange} />
@@ -18,9 +18,7 @@ export default function Education({EducationalInfo,handleValueChange}) {
         <p>To</p>
         <CustomDatePicker startDate={EducationalInfo.To} Title="To" onDateChange={handleValueChange}/>
       </div>
-      
-
-
+      <button className="remove" onClick={()=>removeEducation(index)}>Remove</button>
     </>
   );
 }

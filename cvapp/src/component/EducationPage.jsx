@@ -6,7 +6,7 @@ export default function EducationPage({ EducationInfo }) {
           <div className="MainClass">
                <div className="SubClass">
                     <div className="degree">
-                         <p>{EducationInfo.Degree}</p>
+                         <p><strong><em>{EducationInfo.Degree}</em></strong></p>
                     </div>
                     <div className="college">
                     <p>{EducationInfo.College}</p>
@@ -14,7 +14,7 @@ export default function EducationPage({ EducationInfo }) {
                </div>
                <div className="subClass">
                     <div className="Date">
-                    <p>{EducationInfo.From.toLocaleDateString()} - {EducationInfo.To.toLocaleDateString()}</p>
+                    <p><em>{EducationInfo.From.toLocaleDateString()} - {EducationInfo.To.toLocaleDateString()}</em></p>
                     </div>
                     <div className="CG">
                          <p>CGPA:{EducationInfo.CGPA}</p>

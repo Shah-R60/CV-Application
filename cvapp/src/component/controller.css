@@ -1,66 +1,84 @@
-.Main{
+* {
+     margin: 0px;
+     padding: 0px;
+     /* position: static; */
+}
+
+.Main {
      display: flex;
      width: 100vw;
+     height: 100%;
+     /* border: 2px solid red; */
 }
 
 .form {
      /* border: 2px solid red; */
      display: flex;
-     flex-direction: column; /* Aligns content in a column */
-     align-items: center; /* Centers horizontally */
+     flex-direction: column;
+     /* Aligns content in a column */
+     align-items: center;
+     /* Centers horizontally */
      width: 30%;
-     justify-content: flex-start; /* Moves content to the top */
-     height: 100vh; /* Full height of the viewport */
-     padding-top: 20px; /* Adjust this value to move it further down */
+     justify-content: flex-start;
+     /* Moves content to the top */
+     height: 100vh;
+     /* Full height of the viewport */
+     padding-top: 20px;
+     /* Adjust this value to move it further down */
      /* background-color: #f5f5f5; Optional background */
 }
 
-.profile{
+
+.buttons{
+     /* position: absolute; */
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+}
+
+
+.profile {
      /* border: 2px solid rgb(174, 255, 0); */
-     width: 70%;
-     border: 2px solid rgb(255, 255, 255);
-     height: 100vh;
+     width: 60%;
+     border: 2px solid rgb(247, 247, 247);
+     height: 100%;
      display: flex;
      flex-direction: column;
      /* align-items:start; */
      justify-content: start;
-     padding: 10px;
-     margin-left: 10px;
-     margin-right: 10px;
+     margin: 20px;
+     /* margin: 60px; */
+
+
 }
 
-.profile .heading{
+.profile .heading {
      font-weight: bold;
      font-size: 20px;
-     margin: 0px;
-     /* margin-inline: 10px; */
+     margin: 3px 15px;
 }
 
 hr {
-     border: 1px solid rgb(255, 255, 255);
-     margin: 5px 0;
-   }
-   
+     /* border: 1px solid rgb(255, 255, 255); */
+     color: rgb(187, 183, 183);
+     margin: 0 20px;
 
-p{
-     margin: 0;
-     font-size: 20px;
 }
 
-.heading{
+.form .heading{
      font-size: 30px;
-     /* border: 2px solid red; */
      font-weight: bold;
-     margin-bottom: 10px;
 }
 
-.buttons{
+
+.buttons {
      display: flex;
      flex-direction: column;
      padding: 10px;
 }
 
-button{
+button {
      height: 50px;
      width: 300px;
      margin: 5px;
@@ -69,17 +87,42 @@ button{
      font-size: 20px;
 }
 
-.fillClass{
+
+.per{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     width: 300px;
+     /* border: 2px solid red; */
+}
+
+.rah{
+     width: 30%;
+}
+
+.remove{
+     background-color: rgba(0, 21, 89, 0.836);
+     color: white;
+     width: 30%;
+     height: 40px;
+     font-size: 15px;
+     /* align-items: center; */
+     text-align: center;
+     display: flex; 
+     align-items: center; 
+     justify-content: center;
+}
+.fillClass {
      /* width: 200px; */
      width: 100%;
-     display:  flex;
+     display: flex;
      align-items: center;
      justify-content: space-between;
      padding: 10px;
 }
 
 
-.fillClass input{
+.fillClass input {
      width: 200px;
      height: 25px;
      /* margin: 2; */
@@ -90,21 +133,27 @@ button{
 }
 
 
-@media(max-width:768px)
-{
-     .Main{
+@media(max-width:768px) {
+     .Main {
           display: flex;
           flex-direction: column;
+          align-items: center;
           width: 100vw;
+          height: 100%;
+          /* width: 100%; */
      }
 
-     .form{
-          width: 100vw;
+     .form {
+          /* width: 100vw; */
+          /* width: 100vw; */
+          margin: 20px;
           height: 70%;
      }
 
-     .profile{
-          width: 100vw;
-
+     .profile {
+          /* width: 100vw; */
+          width: 90%;
+          margin: 20px;
+          /* height: 100vh; */
      }
 }

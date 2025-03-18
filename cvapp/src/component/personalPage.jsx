@@ -6,7 +6,7 @@ export default function PersonalPage({personalInfo}){
           <div className="main">
                <p className="name">{personalInfo.name}</p>
                <div className="detail">
-               <p>{personalInfo.PhoneNumber} &bull; {personalInfo.Email} &bull; {personalInfo.LinkedIn}</p>
+               <p>{personalInfo.PhoneNumber} &nbsp;&bull;&nbsp; {personalInfo.Email}&nbsp; &bull;&nbsp; {personalInfo.LinkedIn}</p>
                </div>
           </div>
      )
