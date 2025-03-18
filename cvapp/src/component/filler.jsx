@@ -1,8 +1,8 @@
 import "./controller.css";
 
-export default function Filler({ title, value, handleValue }) {
+export default function Filler({ index ,title, value, handleValue }) {
   function handleChange(e) {
-    handleValue(title, e.target.value);
+    handleValue(index,title, e.target.value);
   }
 
   return (

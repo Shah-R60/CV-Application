@@ -6,17 +6,17 @@ import "./child.css";
 export default function Education({index, EducationalInfo,handleValueChange, removeEducation}) {
   return (
     <>
-      <Filler title="College" value={EducationalInfo.College} handleValue={handleValueChange} />
-      <Filler title="Degree" value={EducationalInfo.Degree} handleValue={handleValueChange} />
-      <Filler title="CGPA" value={EducationalInfo.CGPA} handleValue={handleValueChange} />
+      <Filler index={index} title="College" value={EducationalInfo.College} handleValue={handleValueChange} />
+      <Filler index={index} title="Degree" value={EducationalInfo.Degree} handleValue={handleValueChange} />
+      <Filler index={index} title="CGPA" value={EducationalInfo.CGPA} handleValue={handleValueChange} />
       
       <div className="date">
         <p>From</p>
-        <CustomDatePicker startDate={EducationalInfo.From} Title="From" onDateChange={handleValueChange}/>
+        <CustomDatePicker index={index} startDate={EducationalInfo.From} Title="From" onDateChange={handleValueChange}/>
       </div>
       <div className="date">
         <p>To</p>
-        <CustomDatePicker startDate={EducationalInfo.To} Title="To" onDateChange={handleValueChange}/>
+        <CustomDatePicker index={index} startDate={EducationalInfo.To} Title="To" onDateChange={handleValueChange}/>
       </div>
       <button className="remove" onClick={()=>removeEducation(index)}>Remove</button>
     </>

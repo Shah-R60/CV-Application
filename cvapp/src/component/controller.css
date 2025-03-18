@@ -66,9 +66,19 @@ hr {
 
 }
 
-.form .heading{
+.form .projectname{
      font-size: 30px;
      font-weight: bold;
+     display: flex;
+     width:300px;
+     justify-content: center;
+     text-align: center;
+     text-wrap:wrap;
+}
+
+.form .inputinfo{
+     font-size: 18px;
+     margin: 3px;
 }
 
 

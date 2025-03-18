@@ -13,7 +13,7 @@ import ProjectPage from "./projectPage.jsx"
 import SkillPage from "./SkillPage.jsx"
 // import Filler from "./filler.jsx"
 
-
+//control display of inputform of different 
 export default function Controller() {
   const [activeState, setActive] = useState(-1);
   function handleClick(number) {
@@ -25,17 +25,19 @@ export default function Controller() {
     }
   }
 
+  //state of personal information
   const [personalInfo, setPersonalInfo] = useState({
     name: "Your Name",
     PhoneNumber: "+123 456 789",
     Email: "example@gmail.com",
     LinkedIn: "linkedIn"
   });
-  function personalChange(title, arg) {
+  // function to change state of personal information
+  function personalChange(index,title, arg) {
     setPersonalInfo(prevInfo => ({ ...prevInfo, [title]: arg }));
   }
 
-
+  // state for educational information
   const [EducationalInfo, setEducationalInfo] = useState([{
     College: "Example University",
     Degree: " Masters of Engineering, Computer Science",
@@ -44,12 +46,16 @@ export default function Controller() {
     From: new Date()
   }]);
 
-  function EducationChnage(index, title, arg) {
-    setEducationalInfo(prevInfo => prevInfo.map((info, i) => i === index ? { ...prevInfo, [title]: arg } : info));
-  }
+  // function to change educational information
+  function EducationChnage(index, title, arg) {        
+    setEducationalInfo(prevInfo => 
+        prevInfo.map((info, i) => 
+            i === index ? { ...info, [title]: arg } : info
+        )
+    );  
+}
 
-
-
+// to add new Educational information
   function addEducation() {
     setEducationalInfo(prevInfo => [
       ...prevInfo,
@@ -63,34 +69,89 @@ export default function Controller() {
     ])
   }
 
-
+// to remove Educational information
   function removeEducation(index) {
     setEducationalInfo(prevInfo => prevInfo.filter((_, i) => i !== index));
   }
 
-  const [ExperienceInfo, setExperienceInfo] = useState({
+
+  // state for experience information
+  const [ExperienceInfo, setExperienceInfo] = useState([{
     CompanyName: "XYZ",
     Role: "Software Engineering Inter",
     Description1: "Worked with product managers to re-architect a multi-page web app into a single page web-app, boosting yearly revenue by $1.4M.",
     Description2: "Improved application performance and reduced load time by 30% through code-splitting and lazy loading.",
     From: new Date(),
     To: new Date()
-  });
+  }]);
 
-  function ExperienceChange(title, arg) {
-    setExperienceInfo(prevInfo => ({ ...prevInfo, [title]: arg }));
+  //to change state of experience 
+  function ExperienceChange(index,title, arg) {
+    setExperienceInfo(prevInfo =>prevInfo.map((info,i)=>i===index?{ ...info, [title]: arg }:info));
+  }
+
+  // to add new experience function
+  function ExpAdd(){
+    setExperienceInfo(prevInfo=>[
+      ...prevInfo,
+      {
+        CompanyName: "XYZ",
+        Role: "Software Engineering Inter",
+        Description1: "Worked with product managers to re-architect a multi-page web app into a single page web-app, boosting yearly revenue by $1.4M.",
+        Description2: "Improved application performance and reduced load time by 30% through code-splitting and lazy loading.",
+        From: new Date(),
+        To: new Date()
+      }
+    ]
+    )
+  }
+
+  // to remove Experience information
+  function ExpRemove(index){
+    setExperienceInfo(prevInfo=>
+      prevInfo.filter((_,i)=>i!==index)
+    )
   }
 
 
-  const [ProjectInfo, setProjectInfo] = useState({
+  // state to store project information
+  const [ProjectInfo, setProjectInfo] = useState([{
     Project: "E-commerce Store",
     Link: "www.github.com",
     Description1: "Developed an online store with a fully functional shopping cart, product search, and checkout process.",
     Description2: "Integrated Stripe API for secure payments and MongoDB for product and order data storage"
-  });
-  function ProjectChange(title, arg) {
-    setProjectInfo(prevInfo => ({ ...prevInfo, [title]: arg }));
+  }]);
+
+
+  //to change state of project entity
+  function ProjectChange(index,title, arg) {
+    setProjectInfo(prevInfo =>prevInfo.map((info,i)=>i===index?{...info,[title]:arg}:info))
   }
+
+
+  //to add new project in cv
+  function ProAdd(){
+    setProjectInfo(prevInfo=>(
+      [
+        ...prevInfo,
+        {
+          Project: "E-commerce Store",
+          Link: "www.github.com",
+          Description1: "Developed an online store with a fully functional shopping cart, product search, and checkout process.",
+          Description2: "Integrated Stripe API for secure payments and MongoDB for product and order data storage"
+        }   
+      ]
+    ))
+  }
+
+  // to remove project from cv
+  function ProRemove(index){
+    setProjectInfo(prevInfo=>
+      prevInfo.filter((_,i)=>i!==index)
+    )
+  }
+
+
 
 
   const [Skills, setSkills] = useState({
@@ -99,20 +160,25 @@ export default function Controller() {
     Database: "PostSQL, MongoDB,MYSQL",
   });
 
-  function SkillChange(title, arg) {
+  function SkillChange(index,title, arg) {
     setSkills(prevInfo => ({ ...prevInfo, [title]: arg }));
   }
 
 
 
   return (
+
     <div className="Main">
       <div className="form">
-        <p className="heading">CV GENERATOR</p>
-        <p>fill in the detail below</p>
+        <p className="projectname">CV GENERATOR</p>
+        <p className="inputinfo">fill in the detail below</p>
         <div className="buttons">
+
+
           <button className="personal" onClick={() => handleClick(0)}>Personal</button>
           {activeState === 0 && <Personal personalInfo={personalInfo} handleValueChange={personalChange} />}
+
+
 
           <div className="per"> 
               <button className="Education" onClick={() => handleClick(1)}>Education</button>
@@ -121,18 +187,37 @@ export default function Controller() {
 
               {activeState === 1 && EducationalInfo.map((edu, index) => (
                   <Education key={index} index={index} EducationalInfo={edu} handleValueChange={EducationChnage} removeEducation={removeEducation} />
-                ))}
-  
-          <button className="Experience" onClick={() => handleClick(2)}>Experience</button>
-          {activeState === 2 && <Experience ExperienceInfo={ExperienceInfo} handleValueChange={ExperienceChange} />}
+               ))}
 
-          <button className="Projects" onClick={() => handleClick(3)}>Projects</button>
-          {activeState === 3 && <Project ProjectInfo={ProjectInfo} handleValueChange={ProjectChange} />}
+
+
+            
+          <div className="per">
+            <button className="Experience" onClick={() => handleClick(2)}>Experience</button>
+            <button className="rah" onClick={ExpAdd}>Add</button>
+          </div>
+
+          {activeState === 2 && ExperienceInfo.map((exp,index)=>(
+            <Experience key={index} index={index} ExperienceInfo={exp} handleValueChange={ExperienceChange} ExpRemove={ExpRemove} />
+          ))}
+
+
+          <div className="per">
+              <button className="Projects" onClick={() => handleClick(3)}>Projects</button>
+              <button className="rah" onClick={ProAdd}>Add</button>
+          </div>
+
+          {activeState === 3 && ProjectInfo.map((pro,index)=>(
+            <Project key={index} index={index} ProjectInfo={pro} handleValueChange={ProjectChange} ProRemove={ProRemove} />
+          ))}
+          
 
           <button className="Skills" onClick={() => handleClick(4)}>Skills</button>
           {activeState === 4 && <Skill Skills={Skills} handleValueChange={SkillChange} />}
         </div>
       </div>
+
+
 
       <div className="profile">
         <PersonalPage personalInfo={personalInfo} />
@@ -145,10 +230,18 @@ export default function Controller() {
 
         <p className="heading">EXPERIENCES</p>
         <hr />
-        <ExperiencePage ExperienceInfo={ExperienceInfo} />
+
+        {ExperienceInfo.map((exp,index)=>(
+        <ExperiencePage key={index} ExperienceInfo={exp} />
+        ))}
+
         <p className="heading">PROJECTS</p>
         <hr />
-        <ProjectPage ProjectInfo={ProjectInfo} />
+        {ProjectInfo.map((pro,index)=>(
+          <ProjectPage key={index} ProjectInfo={pro}/>
+          
+        ))}
+      
         <p className="heading">SKILLS</p>
         <hr />
         <SkillPage SkillInfo={Skills} />

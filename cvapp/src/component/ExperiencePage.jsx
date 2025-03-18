@@ -14,8 +14,7 @@ export default function ExperienceInfo({ ExperienceInfo }) {
                </div>
                <p>{ExperienceInfo.CompanyName}</p>
                <p>&bull;&nbsp;{ExperienceInfo.Description1}</p>
-               <p>&bull;&nbsp;{ExperienceInfo.Description2}</p>
-               
+               <p>&bull;&nbsp;{ExperienceInfo.Description2}</p>   
           </div>
      )
 
