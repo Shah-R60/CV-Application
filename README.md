@@ -18,7 +18,7 @@ A **React-based** CV generator that allows users to input their details and dyna
 - **Vite** – Development environment
 
 ## 🎥 Demo
-[https://cv-generator-pi-ashen.vercel.app] 
+[https://cv-generator-pi-ashen.vercel.app] live preview
 
 ## 📦 Installation & Setup
 1. Clone the repository:
